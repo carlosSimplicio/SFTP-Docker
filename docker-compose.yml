@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  server:
+    container_name: ssh-server
+    build:
+      context: server
+    entrypoint: "./start_server.sh"
+    ports:
+      - 8000:22
+  client:
+    build:
+      context: client
+    container_name: ssh-client
